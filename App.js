@@ -1,12 +1,14 @@
-
+import { NavigationContainer } from '@react-navigation/native';
 import { View } from 'react-native';
+import Drawer from './navigation/Drawer';
+
+
 
 export default function App() {
   return (
-  
-    <View>
-      <Text>Holaa</Text>
-    </View>
+  <NavigationContainer>
+    <Drawer/>
+  </NavigationContainer>
  
   );
 }
