@@ -1,4 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit'
+import citiesApi from './actions/citiesApi'
 
 export default configureStore({
    reducer:{

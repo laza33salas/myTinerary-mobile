@@ -1,10 +1,10 @@
-import {creteApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
+import {createApi, fetchBaseQuery} from '@reduxjs/toolkit/query/react'
 
-const citiesApi = creteApi({
+const citiesApi = createApi({
     reducerPath: 'citiesApi',
 
     baseQuery: fetchBaseQuery({
-        baseUrl: 'http://localhost:4000/'
+        baseUrl: 'https://my-tinerary-back-salas-medici.herokuapp.com'
     }),
     
     endpoints: (builder) =>({
