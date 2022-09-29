@@ -1,6 +1,8 @@
 import React from 'react'
 import Hero from '../components/Hero'
+import Carousel from '../components/Carousel'
 import { ScrollView, ImageBackground, StyleSheet, Button, View, Text } from 'react-native';
+import { color } from 'react-native-reanimated';
 
 export default function Index({ navigation }){
   return (
@@ -8,11 +10,11 @@ export default function Index({ navigation }){
       <ImageBackground source={require('../assets/heroBackground.jpeg')} style={styles.skyImage}>
         <Hero/>
         <View style={{flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-          <Button
+          <Button style={styles.buttonHero}
             onPress={() => navigation.navigate('Cities')}
-            title="Go to Cities"
-          />
+            title="Go to Cities"/>
         </View>
+        <Carousel/>
       </ImageBackground>
     </ScrollView>
   )
@@ -20,7 +22,7 @@ export default function Index({ navigation }){
 
 const styles = StyleSheet.create({
   main: {
-    flex: 1
+    flex: 1,
   },
   homeBackground: {
     flex: 1,
@@ -28,5 +30,8 @@ const styles = StyleSheet.create({
     height: "100%",
     alignItems: "center"
   },
+  buttonHero: {
+    margin: 20,
+  }
 })
 
