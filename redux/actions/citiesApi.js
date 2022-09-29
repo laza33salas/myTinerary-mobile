@@ -17,8 +17,6 @@ const citiesApi = createApi({
 
         }),
 
-
-
         getOneCity: builder.query({
             query: (id) => `/cities/${id}`,
             transformResponse: res => res.response
