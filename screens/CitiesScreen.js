@@ -1,9 +1,10 @@
-import { View, Text, Image, StyleSheet, FlatList } from 'react-native'
-import React, { useState, useRef } from 'react'
+import { ScrollView, View, Text, Image, StyleSheet, TextInput, SafeAreaView, Button } from 'react-native'
+import React, { useState } from 'react'
 import { useGetAllCitiesQuery } from '../redux/actions/citiesApi'
 const CitiesScreen = () => {
 
-  const [inputValue, setInputValue] = useState("")
+  const [inputValue, setinputValue] = useState("")
+
 
   const {
     data: cities,
@@ -16,39 +17,69 @@ const CitiesScreen = () => {
 
   let filter = []
   if (isLoading) {
-    console.log("IS LOADING")
     filter = []
   } else if (isSuccess) {
-    console.log("IS SUCCES")
     filter = cities.response
     if (filter === []) {
       filter = []
     }
   } else if (isFailed) {
-    console.log("IS FAILED")
     filter = undefined
     console.log(error)
   }
 
   const styles = StyleSheet.create({
     photito: {
-      width: 150,
-      height: 150
+      width: 250,
+      height: 200
+    },
+    container: {
+      flex: 1,
+
+      height: "100%",
+      alignItems: "center",
+
+
+    },
+    cards: {
+      margin: 10,
+    },
+
+    cardContainer: {
+      margin: 0
+    },
+
+    tittle: {
+      textAlign: "center",
+      fontSize: 25,
+
+
     }
   })
 
   function createCard(item) {
     return (
-      <View>
-        <Text>{item.city}</Text>
+
+      <View style={styles.cards} key={item._id}>
+        <Text style={styles.tittle}>{item.city}</Text>
         <Image source={{ uri: item.photo }} style={styles.photito} />
+        <Button title="Details" accessibilityLabel="View More" />
       </View>
+
     )
 
   }
 
   return (
-    filter?.map(createCard)
+    <View style={styles.container}>
+      <SafeAreaView>
+        <TextInput onChangeText={text => text === "" ? setinputValue("") : setinputValue(text)}></TextInput>
+      </SafeAreaView>
+
+      <ScrollView>
+        {filter?.map(createCard)}
+      </ScrollView>
+    </View>
   )
 }
 
