@@ -14,7 +14,7 @@ export default Hero
 
 const styles = StyleSheet.create({
   title: {
-    color: "black",
+    color: "white",
     justifyContent: "center",
     alignItems: "center",
     textAlign: "center",
@@ -25,6 +25,6 @@ const styles = StyleSheet.create({
     fontSize: 20,
     paddingHorizontal: 15,
     textAlign: "center",
-    marginTop: 20
-  },
+    margin: 15,
+  }
 })
