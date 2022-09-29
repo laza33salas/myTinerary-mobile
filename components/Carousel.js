@@ -18,7 +18,7 @@ export default function Carousel({ }) {
         {
             photo: require('../assets/Bangkok.jpeg'),
             city: 'Bangkok',
-            alt: 'bangkokab'
+            alt: 'bangkoka'
         },
         {
             photo: require('../assets/Bangkok.jpeg'),
