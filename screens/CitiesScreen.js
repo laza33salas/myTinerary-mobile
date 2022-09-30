@@ -38,7 +38,7 @@ const CitiesScreen = () => {
 
       height: "100%",
       alignItems: "center",
-
+      backgroundColor: "wheat"
 
     },
     cards: {
@@ -46,7 +46,7 @@ const CitiesScreen = () => {
     },
 
     cardContainer: {
-      margin: 0
+      width: "100%"
     },
 
     tittle: {

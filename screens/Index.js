@@ -2,7 +2,6 @@ import React from 'react'
 import Hero from '../components/Hero'
 import Carousel from '../components/Carousel'
 import { ScrollView, ImageBackground, StyleSheet, Button, View, Text } from 'react-native';
-import { color } from 'react-native-reanimated';
 
 export default function Index({ navigation }){
   return (
