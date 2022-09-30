@@ -1,4 +1,4 @@
-import { ScrollView, ImageBackground, StyleSheet, Button, View, Text } from 'react-native';
+import { ScrollView, ImageBackground, StyleSheet, Button, View, Text, Alert } from 'react-native';
 import React, { useEffect, useState } from 'react'
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import { useUserSignInMutation } from '../redux/actions/usersApi'
@@ -8,6 +8,10 @@ import { useDispatch } from 'react-redux'
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SignInForm() {
+
+    function alertt(){ Alert.alert('You have signed in', 'Welcome! c: ', [
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ])};
 
     const [userSignIn, { data, error }] = useUserSignInMutation()
 
@@ -25,6 +29,7 @@ export default function SignInForm() {
             from: 'form'
         }
         userSignIn(dataUser)
+        alertt()
     }
 
     useEffect(() => {

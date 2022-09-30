@@ -1,4 +1,4 @@
-import { ScrollView, ImageBackground, StyleSheet, Button, View, Text } from 'react-native';
+import { ScrollView, ImageBackground, StyleSheet, Button, View, Text, Alert } from 'react-native';
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux';
 import axios from 'axios'
@@ -6,6 +6,11 @@ import { TextInput } from 'react-native-gesture-handler';
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 
 export default function SignUpForm() {
+
+    function alertt(){ Alert.alert('You have signed up', 'Welcome! c: ', [
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ])};
+
 
     const [name, setName] = useState("")
     const [lastName, setLastName] = useState("")
@@ -26,6 +31,7 @@ export default function SignUpForm() {
             from: 'form',
             role: "user"
         }
+        alertt()
         console.log(data)
         try {
             await axios?.post('https://my-tinerary-back-salas-medici.herokuapp.com/users/signup', data)

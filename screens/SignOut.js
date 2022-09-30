@@ -1,12 +1,17 @@
-import { ScrollView, ImageBackground, StyleSheet, Button, View, Text, Image } from 'react-native';
+import { ScrollView, ImageBackground, StyleSheet, Button, View, Text, Image, Alert } from 'react-native';
 import React from 'react'
 import Pressable from 'react-native/Libraries/Components/Pressable/Pressable';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SignOut() {
 
+   function alertt(){ Alert.alert('You have logged out', 'See you arounc! c: ', [
+        { text: 'OK', onPress: () => console.log('OK Pressed') },
+      ])};
+
     function exit() {
        AsyncStorage.clear()
+       alertt()
     }
 
 
