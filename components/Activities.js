@@ -11,16 +11,28 @@ const Activities = (props) => {
     const styles = StyleSheet.create({
         photito: {
             width: 250,
-            height: 200
+            height: 200,
+            alignContent: "center",
+            alignSelf: "center",
+            margin: 0
         },
         container: {
-            height: 900,
+            height: 300,
+        },
+        tittle: {
+            fontSize: 25,
+            textAlign: "center",
+            marginTop: 20
+        },
+        texts: {
+            textAlign: "center",
+            margin: 5
         }
     })
 
     const cardsActivities = (item) => (
-        <View style={styles.container}>
-            <Text >{item.name} </Text>
+        <View style={styles.container} key={item._id}>
+            <Text style={styles.texts}>{item.name} </Text>
             <View>
                 <Image source={{ uri: item.photo }} style={styles.photito} />
             </View>
@@ -28,8 +40,8 @@ const Activities = (props) => {
     )
     return (
         <View>
-            <Text>Activities</Text>
-            <View >
+            <Text style={styles.tittle}>Activities</Text>
+            <View>
                 {activities?.response.map(cardsActivities)}
             </View>
         </View>
