@@ -2,10 +2,11 @@ import { ScrollView, View, Text, Image, StyleSheet, TextInput, SafeAreaView, But
 import React, { useState } from 'react'
 import { useGetAllCitiesQuery } from '../redux/actions/citiesApi'
 import { useNavigation } from '@react-navigation/native';
+
 const CitiesScreen = () => {
 
   const [inputValue, setinputValue] = useState("")
-
+  const navigation = useNavigation()
 
   const {
     data: cities,
@@ -64,7 +65,8 @@ const CitiesScreen = () => {
       <View style={styles.cards} key={item._id}>
         <Text style={styles.tittle}>{item.city}</Text>
         <Image source={{ uri: item.photo }} style={styles.photito} />
-        <Button title="Details" accessibilityLabel="View More" />
+        <Button title="Details" accessibilityLabel="View More" onPress={() => navigation.navigate('Details', { id: item._id })}
+        />
       </View>
 
     )
