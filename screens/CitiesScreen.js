@@ -1,6 +1,7 @@
 import { ScrollView, View, Text, Image, StyleSheet, TextInput, SafeAreaView, Button } from 'react-native'
 import React, { useState } from 'react'
 import { useGetAllCitiesQuery } from '../redux/actions/citiesApi'
+import { useNavigation } from '@react-navigation/native';
 const CitiesScreen = () => {
 
   const [inputValue, setinputValue] = useState("")
