@@ -1,12 +1,21 @@
 import { View, Text, StyleSheet, Image } from 'react-native'
 import React from 'react'
 import { useGetOneCityQuery } from '../redux/actions/citiesApi'
+import Itinerary from '../components/Itinerary'
+import { useGetItinerariesQuery } from '../redux/actions/itinerariesApi'
 const DetailsScreen = ({ route }) => {
 
   const {
+
     data: cities,
 
   } = useGetOneCityQuery(route.params.id)
+
+  const {
+    data: itinerarios
+  } = useGetItinerariesQuery(route.params.id)
+
+  console.log(itinerarios)
 
 
   const styles = StyleSheet.create({
@@ -42,6 +51,8 @@ const DetailsScreen = ({ route }) => {
   })
 
   return (
+
+
     <View style={styles.cards} key={cities?.response._id}>
       <Text style={styles.tittle}>{cities?.response.city}</Text>
       <Image source={{ uri: cities?.response.photo }} style={styles.photito} />
@@ -49,7 +60,13 @@ const DetailsScreen = ({ route }) => {
       <Text>Foundation: {cities?.response.foundation}</Text>
       <Text>Population: {cities?.response.population}</Text>
 
+      <View>
+        <Itinerary itinerarios={itinerarios} />
+      </View>
     </View>
+
+
+
   )
 }
 
