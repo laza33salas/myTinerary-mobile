@@ -57,7 +57,7 @@ export default function SignUpForm() {
                 <TextInput placeholder="Photo" value={userPhoto} onChangeText={text => text === "" ? setUserPhoto("") : setUserPhoto(text)} required />
             </View>
             <View style={styles.inputStyle}>
-                <Text>Country</Text>
+                <Text>Country:</Text>
                 <TextInput placeholder="Country" value={country} onChangeText={text => text === "" ? setCountry("") : setCountry(text)} required />
             </View>
             <Pressable style={styles.buttonSU} onPress={changeValue}><Text style={styles.buttonSU}>Send</Text></Pressable>
@@ -67,12 +67,16 @@ export default function SignUpForm() {
 
 const styles = StyleSheet.create({
     inputSignUp: {
-        backgroundColor: "white",
         width: "70%",
         marginLeft: 50,
     },
     buttonSU: {
         backgroundColor: "orange",
         textAlign: 'center'
+    },
+    inputStyle: {
+        backgroundColor: "white",
+        marginBottom: 5,
+        borderRadius: 8
     }
 })
