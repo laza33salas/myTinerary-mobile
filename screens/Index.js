@@ -22,6 +22,7 @@ export default function Index({ navigation }){
 const styles = StyleSheet.create({
   main: {
     flex: 1,
+    backgroundColor: "wheat"
   },
   homeBackground: {
     flex: 1,
