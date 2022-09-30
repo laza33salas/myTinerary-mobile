@@ -1,19 +1,21 @@
 import { View, Text } from 'react-native'
 import React from 'react'
+import Activities from './Activities'
 
 const Itinerary = (props) => {
 
     const cardItinerary = (data) => (
-        <View className='container-itineraries' key={data._id}>
-            <Text className='tittle-itinerary'>Itinerary</Text>
-            <Text className='itinerary-data'>
-                <Text className=''>{data.name}</Text>
-                <Text className=''>Price: ${data.price}</Text>
+        <View key={data._id}>
+            <Text >Itinerary</Text>
+            <View >
+                <Text >{data.name}</Text>
+                <Text >Price: ${data.price}</Text>
                 <Text>Likes</Text>
-                <Text className=''>{data.tags}</Text>
-                <Text className=''>Duration: {data.duration}</Text>
+                <Text >{data.tags}</Text>
+                <Text >Duration: {data.duration}</Text>
+            </View>
 
-            </Text>
+            <Activities id={data._id} />
         </View>
     )
 
