@@ -16,7 +16,6 @@ const CitiesScreen = () => {
     isFailed
   } = useGetAllCitiesQuery(inputValue)
 
-
   let filter = []
   if (isLoading) {
     filter = []
@@ -30,47 +29,16 @@ const CitiesScreen = () => {
     console.log(error)
   }
 
-  const styles = StyleSheet.create({
-    photito: {
-      width: 250,
-      height: 200
-    },
-    container: {
-      flex: 1,
-
-      height: "100%",
-      alignItems: "center",
-      backgroundColor: "wheat"
-
-    },
-    cards: {
-      margin: 10,
-    },
-
-    cardContainer: {
-      width: "100%"
-    },
-
-    tittle: {
-      textAlign: "center",
-      fontSize: 25,
-
-
-    }
-  })
-
   function createCard(item) {
     return (
 
       <View style={styles.cards} key={item._id}>
         <Text style={styles.tittle}>{item.city}</Text>
         <Image source={{ uri: item.photo }} style={styles.photito} />
-        <Button title="Details" accessibilityLabel="View More" onPress={() => navigation.navigate('Details', { id: item._id })}
+        <Button style={styles.cityButton} title="Details" accessibilityLabel="View More" onPress={() => navigation.navigate('Details', { id: item._id })}
         />
       </View>
-
     )
-
   }
 
   return (
@@ -85,5 +53,30 @@ const CitiesScreen = () => {
     </View>
   )
 }
+
+const styles = StyleSheet.create({
+  photito: {
+    width: 250,
+    height: 200,
+    borderRadius: 8
+  },
+  container: {
+    flex: 1,
+
+    height: "100%",
+    alignItems: "center",
+    backgroundColor: "wheat"
+  },
+  cards: {
+    margin: 10
+  },
+  cardContainer: {
+    width: "100%",
+  },
+  tittle: {
+    textAlign: "center",
+    fontSize: 25,
+  }
+})
 
 export default CitiesScreen

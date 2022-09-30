@@ -30,9 +30,14 @@ export default function Carousel({ }) {
             alt: 'bangkoka'
         },
         {
-            photo: require('../assets/Bangkok.jpeg'),
-            city: 'BangkokKOKOKOKOK',
-            alt: 'bangkokab'
+            photo: require('../assets/Singapore.jpeg'),
+            city: 'Singapore',
+            alt: 'singapore'
+        },
+        {
+            photo: require('../assets/London.jpeg'),
+            city: 'London',
+            alt: 'london'
         },
     ]
 
