@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import { ImageBackground, StyleSheet, View, Text } from 'react-native';
+import { useGetAllCitiesQuery } from '../redux/actions/citiesApi'
 
 export default function Carousel({ }) {
 
@@ -8,6 +9,14 @@ export default function Carousel({ }) {
     const [start, setStart] = useState(0)
     const [end, setEnd] = useState(start + range)
     const [intervalId, setIntervalId] = useState()
+
+    const {
+        data: cities,
+        error,
+        isLoading,
+        isSuccess,
+        isFailed
+      } = useGetAllCitiesQuery()
 
     const citiesData = [
         {

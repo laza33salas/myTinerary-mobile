@@ -1,12 +1,26 @@
-import { View, Text } from 'react-native'
+import { ScrollView, ImageBackground, StyleSheet, Button, View, Text } from 'react-native';
 import React from 'react'
+import SignUpForm from '../components/SignUpForm';
 
-const SignUp = () => {
+export default function SignUp() {
     return (
-        <View>
-            <Text>SignUp</Text>
-        </View>
+        <ScrollView style={styles.logs}>
+            <Text style={styles.inputSign}>Sign Up with:</Text>
+            <SignUpForm/>
+            <Text style={styles.inputSign}>Or Sign Up with:</Text>
+        </ScrollView>
     )
 }
 
-export default SignUp
+const styles = StyleSheet.create({
+    logs: {
+        backgroundColor: "wheat"
+    },
+    inputSign: {
+        color: "black",
+        fontSize: 20,
+        paddingHorizontal: 15,
+        textAlign: "center",
+        margin: 15,
+    }
+})
