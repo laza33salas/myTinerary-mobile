@@ -9,11 +9,11 @@ const DrawerNavigator = createDrawerNavigator()
 const Drawer = () => {
   return (
     <DrawerNavigator.Navigator initialRouteName="Home">
-    <DrawerNavigator.Screen name="Home" component={Index} />
-    <DrawerNavigator.Screen name="Cities" component={CitiesScreen} />
-    <DrawerNavigator.Screen name="Details" component={DetailsScreen} />
-    <DrawerNavigator.Screen name="Sign Up" component={SignUp} />
-  </DrawerNavigator.Navigator>
+      <DrawerNavigator.Screen name="Home" component={Index} />
+      <DrawerNavigator.Screen name="Cities" component={CitiesScreen} />
+      <DrawerNavigator.Screen name="Details" component={DetailsScreen} />
+      <DrawerNavigator.Screen name="Sign Up" component={SignUp} />
+    </DrawerNavigator.Navigator>
   )
 }
 
